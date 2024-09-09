@@ -1,0 +1,11 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>Hello, {{ title }}</h1>
+      <p>Congratulations! Your app is running!</p>
+      <low-price *ngIf="price < 100"></low-price>
+      <mid-price *ngIf="price >= 100 && price < 200"></mid-price>
+      <high-price *ngIf="price >= 200"></high-price>
+    </div>
+  </div>
+</main>
