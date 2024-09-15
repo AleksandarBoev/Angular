@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {EventEmitterComponent} from "./event-emitter/EventEmitterComponent";
+import {ChildComponent} from "./event-emitter/child.component";
 
 @NgModule({
   declarations: [
-    AppComponent, EventEmitterComponent
+    AppComponent, ChildComponent
   ],
   imports: [
     BrowserModule,

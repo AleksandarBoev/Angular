@@ -1,7 +1,10 @@
 <main class="main">
   <div class="content">
-    <h1>Hello, {{ title }}</h1>
-    <p>Congratulations! Your app is running. 🎉</p>
-    <event-emitter (myEventEmitter)="receiveMessage($event)"/>
+    <!--set "user" from child component to value taken from parent component-->
+    <child
+      [user]="getUser()"
+      (childEventEmitter)="receiveMessage($event)">
+    </child>
+    <!--specify the eventEmitter from the child component and the method from parent component, which will handle the sent event-->
   </div>
 </main>
