@@ -5,6 +5,8 @@ import {ContactsComponent} from './contacts/contacts.component';
 import {CharactersComponent} from './characters/characters.component';
 import {CharacterComponent} from './characters/character/character.component';
 import {CharacterIntroComponent} from './characters/character-intro/character-intro.component';
+import {SecretDoorComponent} from './secret-room/secret-door/SecretDoorComponent';
+import {SecretRoomComponent} from './secret-room/SecretRoomComponent';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,7 +16,9 @@ const routes: Routes = [
       {path: 'intro', component: CharacterIntroComponent},
       {path: ':character-name', component: CharacterComponent}
     ]
-  }
+  },
+  {path: 'secret-door', component: SecretDoorComponent},
+  {path: 'secret-room', component: SecretRoomComponent}
 ];
 
 @NgModule({
