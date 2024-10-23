@@ -7,6 +7,7 @@ import {CharacterComponent} from './characters/character/character.component';
 import {CharacterIntroComponent} from './characters/character-intro/character-intro.component';
 import {SecretDoorComponent} from './secret-room/secret-door/SecretDoorComponent';
 import {SecretRoomComponent} from './secret-room/SecretRoomComponent';
+import {PageNotFoundComponent} from './page-not-found/PageNotFoundComponent';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     ]
   },
   {path: 'secret-door', component: SecretDoorComponent},
-  {path: 'secret-room', component: SecretRoomComponent}
+  {path: 'secret-room', component: SecretRoomComponent},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
