@@ -11,14 +11,27 @@ import {CharacterService} from './characters/character/character.service';
 import {CharacterIntroComponent} from './characters/character-intro/character-intro.component';
 import {SecretDoorComponent} from './secret-room/secret-door/SecretDoorComponent';
 import {SecretRoomComponent} from './secret-room/SecretRoomComponent';
+import {SacredTextsComponent} from './sacred-texts/sacred-texts.component';
+import {LoginComponent} from './security/login.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, ContactsComponent, CharactersComponent, CharacterComponent, CharacterIntroComponent, SecretDoorComponent, SecretRoomComponent
+    AppComponent,
+    HomeComponent,
+    ContactsComponent,
+    CharactersComponent,
+    CharacterComponent,
+    CharacterIntroComponent,
+    SecretDoorComponent,
+    SecretRoomComponent,
+    LoginComponent,
+    SacredTextsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]
