@@ -10,17 +10,18 @@ import {SecretRoomComponent} from './secret-room/SecretRoomComponent';
 import {PageNotFoundComponent} from './page-not-found/PageNotFoundComponent';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'contacts', component: ContactsComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'}, //when a user lands on this path, they are immediately redirected.
+  {path: 'home', component: HomeComponent}, //nothing special
+  {path: 'contacts', component: ContactsComponent}, //nothing special
   {
-    path: 'characters', component: CharactersComponent, children: [
-      {path: 'intro', component: CharacterIntroComponent},
-      {path: ':character-name', component: CharacterComponent}
+    path: 'characters', component: CharactersComponent, children: [ //page with sub-pages. Example: /characters/intro
+      {path: 'intro', component: CharacterIntroComponent}, //nothing special
+      {path: ':character-name', component: CharacterComponent} //taking path param and calling a service with it to fetch data to visualize
     ]
   },
-  {path: 'secret-door', component: SecretDoorComponent},
-  {path: 'secret-room', component: SecretRoomComponent},
-  {path: '**', component: PageNotFoundComponent}
+  {path: 'secret-door', component: SecretDoorComponent}, //page for entering secret-room. If correct input --> programmatically redirect user to secret room
+  {path: 'secret-room', component: SecretRoomComponent}, //nothing special
+  {path: '**', component: PageNotFoundComponent} //THIS HAS TO BE LAST, OR IT BREAKS THE ROUTINGS BELOW IT
 ];
 
 @NgModule({
