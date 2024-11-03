@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LocalStorage} from './security/local-storage';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'routing';
+    protected readonly localStorage = localStorage;
+  protected readonly LocalStorage = LocalStorage;
 }

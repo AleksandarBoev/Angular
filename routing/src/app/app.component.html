@@ -5,10 +5,13 @@
     <ul>
       <li><a routerLink="/">Home</a></li>
       <li><a routerLink="contacts">Contacts</a></li>
+      <li><a routerLink="contacts">Contacts</a></li>
       <li><a routerLink="characters">Characters</a></li>
+      <li><a routerLink="characters-v2">Characters V2 Hello</a></li>
       <li><a routerLink="secret-door">Secret Door</a></li>
       <li><a routerLink="login">Login</a></li>
       <li><a routerLink="sacred-texts">Sacred Texts</a></li>
+      <li *ngIf="localStorage.getItem(LocalStorage.LOGGED_IN)  === 'true'"><a routerLink="user-profile">User Profile</a></li>
     </ul>
     <router-outlet/> <!--when you click on a routerlink, the component html will visualize here. When you click some other link, components will swap-->
   </div>

@@ -14,6 +14,7 @@ import {SecretRoomComponent} from './secret-room/SecretRoomComponent';
 import {SacredTextsComponent} from './sacred-texts/sacred-texts.component';
 import {LoginComponent} from './security/login.component';
 import {FormsModule} from '@angular/forms';
+import {UserProfileComponent} from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FormsModule} from '@angular/forms';
     SecretDoorComponent,
     SecretRoomComponent,
     LoginComponent,
-    SacredTextsComponent
+    SacredTextsComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
