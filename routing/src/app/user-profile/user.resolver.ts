@@ -12,9 +12,8 @@ export class UserResolver implements Resolve<User> {
   constructor(private userService: UserService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot): User | Observable<User> | Promise<User> {
+  resolve(): User | Observable<User> | Promise<User> {
     const id: string | null = localStorage.getItem(LocalStorage.USER_ID);
     return this.userService.getSingleUser(id);
   }
-
 }

@@ -28,7 +28,11 @@ const routes: Routes = [
   {path: 'secret-room', component: SecretRoomComponent}, //nothing special
   {path: 'login', component: LoginComponent}, //adding the permission needed for accessing the Sacred Texts
   {path: 'sacred-texts', component: SacredTextsComponent, canActivate: [canActivateProtectedPage]}, //can be viewed only if permission is granted
-  {path: 'user-profile', component: UserProfileComponent, resolve: {user: UserResolver}}, //pre-loads user data via resolver and passes it to component
+  {
+    path: 'user-profile',
+    component: UserProfileComponent,
+    resolve: {user: UserResolver} //pre-loads user data and hands it to the component
+  },
   {path: '**', component: PageNotFoundComponent} //THIS HAS TO BE LAST, OR IT BREAKS THE ROUTINGS BELOW IT
 ];
 
