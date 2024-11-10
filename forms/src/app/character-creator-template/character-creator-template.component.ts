@@ -19,9 +19,13 @@ import {NgForm} from '@angular/forms';
 
       <div class="form-group">
         <label for="race">Race:</label>
-        <select id="race" name="race" ngModel>
+        <select id="race" name="race" ngModel required #raceInput='ngModel'>
           <option *ngFor="let race of getRaces()" [value]="race">{{ race }}</option>
         </select>
+      </div>
+<!--Validating like this is considered a Template Driven approach. If you validate stuff in the component code, then it is more like reactive forms-->
+      <div *ngIf="raceInput.touched"> <!--if input has been interacted with-->
+        <p *ngIf="raceInput.errors?.['required']">Race is required!</p>  <!--get a list of errors. And specifically the required one-->
       </div>
 
       <button>Submit</button>
