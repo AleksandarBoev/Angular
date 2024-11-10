@@ -35,7 +35,7 @@ import {NgForm} from '@angular/forms';
       </div>
       <!--Validating like this is considered a Template Driven approach. If you validate stuff in the component code, then it is more like reactive forms-->
       <div *ngIf="backgroundInput.touched"> <!--if input has been interacted with-->
-        <p *ngIf="backgroundInput.errors?.['appMaxCountResult']">Aaargh, error!</p>  <!--get a list of errors. And specifically the required one-->
+        <p *ngIf="backgroundInput.errors?.['appMaxCountResult']">Longer than {{backgroundInput.errors?.['appMaxCountResult']}}</p>  <!--get a list of errors. And specifically the required one-->
       </div>
 
       <button>Submit</button>
