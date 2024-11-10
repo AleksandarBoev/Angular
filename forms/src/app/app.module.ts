@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CharacterCreatorTemplateComponent} from './character-creator-template/character-creator-template.component';
 import {FormsModule} from '@angular/forms';
+import {MaxCountDirective} from './character-creator-template/max-count.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharacterCreatorTemplateComponent
+    CharacterCreatorTemplateComponent,
+    MaxCountDirective
   ],
   imports: [
     BrowserModule,

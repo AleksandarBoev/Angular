@@ -28,6 +28,16 @@ import {NgForm} from '@angular/forms';
         <p *ngIf="raceInput.errors?.['required']">Race is required!</p>  <!--get a list of errors. And specifically the required one-->
       </div>
 
+
+      <div class="form-group">
+        <label for="characterBackground">Background Story</label>
+        <input type="text" id="characterBackground" name="background" ngModel #backgroundInput='ngModel' [appMaxCount]="20"/>
+      </div>
+      <!--Validating like this is considered a Template Driven approach. If you validate stuff in the component code, then it is more like reactive forms-->
+      <div *ngIf="backgroundInput.touched"> <!--if input has been interacted with-->
+        <p *ngIf="backgroundInput.errors?.['appMaxCountResult']">Aaargh, error!</p>  <!--get a list of errors. And specifically the required one-->
+      </div>
+
       <button>Submit</button>
     </form>
   `
@@ -62,7 +72,8 @@ export class CharacterCreatorTemplateComponent {
 interface Character {
   charName: string;
   gender: Gender;
-  race: Race
+  race: Race;
+  background: string
 }
 
 enum Gender {
