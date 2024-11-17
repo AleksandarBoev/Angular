@@ -1,11 +1,16 @@
 <main class="main">
   <div class="content">
+
     <h1>Custom pipe here: </h1>
     <p>Original: {{ message }}</p>
     <p>Excited: {{ message | excite }}</p>
     <p>Super Excited: {{ message | excite:5 }}</p>
     <p>Excited, but got some questions: {{ message | excite:1: 5 }}</p>
+
     <hr/>
-    <h1>Something else:</h1>
+
+    <h1>Pipe "async": </h1>
+    <app-async-pipe/>
+
   </div>
 </main>

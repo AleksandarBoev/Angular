@@ -11,6 +11,8 @@ export class CustomPipe implements PipeTransform {
    *
    * Every other parameter is whatever I want them to be. In the html, these parameters are passed
    * via double dots ":". To pass many parameters, just add many ":".
+   *
+   * Other parameters can also be functions!
    */
   transform(value: string, exclamationCount: number = 1, questionMarkCount: number = 0): string {
     if (!value) return '';
