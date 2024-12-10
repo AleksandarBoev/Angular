@@ -1,5 +1,5 @@
-import {Component, ElementRef, ViewChild} from "@angular/core";
-import {Observable, Subject} from "rxjs";
+import {Component} from "@angular/core";
+import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Country} from "./Country";
 

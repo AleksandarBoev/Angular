@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import {PromiseComponent} from "./promise/promise.component";
 import {ObservableComponent} from "./observable/observable.component";
 import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {SubjectComponent} from "./observable/subject.component";
 
 @NgModule({
   declarations: [
-    AppComponent, PromiseComponent, ObservableComponent
+    AppComponent, PromiseComponent, ObservableComponent, SubjectComponent
   ],
   imports: [
     BrowserModule,
