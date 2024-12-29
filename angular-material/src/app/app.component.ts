@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-material';
+
+  options: string[] = ['Option1', 'Option2', 'Option3'];
 }
