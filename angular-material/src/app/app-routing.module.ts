@@ -5,12 +5,14 @@ import {MatAutoCompleteDemoComponent} from './mat-auto-complete-demo/mat-auto-co
 import {MatButtonToggleComponent} from './mat-button-toggle/mat-button-toggle.component';
 import {MatCardComponent} from './mat-card/mat-card.component';
 import {MatChipsComponent} from './mat-chips/mat-chips.component';
+import {MatDialogComponent} from './mat-dialog/mat-dialog.component';
 
 const routes: Routes = [
   {path: 'mat-auto-complete', component: MatAutoCompleteDemoComponent},
   {path: 'mat-button-toggle', component: MatButtonToggleComponent},
   {path: 'mat-card', component: MatCardComponent},
   {path: 'mat-chips', component: MatChipsComponent},
+  {path: 'mat-dialog', component: MatDialogComponent},
 ];
 
 @NgModule({

@@ -18,6 +18,9 @@ import {MatButton} from '@angular/material/button';
 import { MatChipsComponent } from './mat-chips/mat-chips.component';
 import {MatChipGrid, MatChipInput, MatChipRow, MatChipsModule} from "@angular/material/chips";
 import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
+import { DialogPopoutComponent } from './mat-dialog/dialog-popout/dialog-popout.component';
+import {MatDialogActions, MatDialogClose, MatDialogContent} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
     MatAutoCompleteDemoComponent,
     MatButtonToggleComponent,
     MatCardComponent,
-    MatChipsComponent
+    MatChipsComponent,
+    MatDialogComponent,
+    DialogPopoutComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,10 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
     MatChipRow,
     MatChipGrid,
     MatChipInput,
-    MatIcon
+    MatIcon,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose
   ],
   providers: [
     provideAnimationsAsync()
