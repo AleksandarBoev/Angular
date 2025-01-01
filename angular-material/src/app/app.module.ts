@@ -21,6 +21,19 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
 import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
 import { DialogPopoutComponent } from './mat-dialog/dialog-popout/dialog-popout.component';
 import {MatDialogActions, MatDialogClose, MatDialogContent} from '@angular/material/dialog';
+import { MatExpansionPanelComponent } from './mat-expansion-panel/mat-expansion-panel.component';
+import {
+  MatAccordion, MatExpansionModule,
+  MatExpansionPanel,
+  MatExpansionPanelDescription,
+  MatExpansionPanelTitle
+} from '@angular/material/expansion';
+import { MatGridComponent } from './mat-grid/mat-grid.component';
+import {MatGridList, MatGridListModule} from '@angular/material/grid-list';
+import { MatListComponent } from './mat-list/mat-list.component';
+import {MatListItem, MatNavList} from '@angular/material/list';
+import { MatMenuComponent } from './mat-menu/mat-menu.component';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -30,7 +43,11 @@ import {MatDialogActions, MatDialogClose, MatDialogContent} from '@angular/mater
     MatCardComponent,
     MatChipsComponent,
     MatDialogComponent,
-    DialogPopoutComponent
+    DialogPopoutComponent,
+    MatExpansionPanelComponent,
+    MatGridComponent,
+    MatListComponent,
+    MatMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +78,19 @@ import {MatDialogActions, MatDialogClose, MatDialogContent} from '@angular/mater
     MatIcon,
     MatDialogContent,
     MatDialogActions,
-    MatDialogClose
+    MatDialogClose,
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionPanelTitle,
+    MatExpansionPanelDescription,
+    MatExpansionModule,
+    MatGridList,
+    MatGridListModule,
+    MatNavList,
+    MatListItem,
+    MatMenuTrigger,
+    MatMenu,
+    MatMenuItem
   ],
   providers: [
     provideAnimationsAsync()
