@@ -34,6 +34,11 @@ import { MatListComponent } from './mat-list/mat-list.component';
 import {MatListItem, MatNavList} from '@angular/material/list';
 import { MatMenuComponent } from './mat-menu/mat-menu.component';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
+import { MatSpinnerComponent } from './mat-spinner/mat-spinner.component';
+import {MatProgressSpinner, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
+import { MatToolBarComponent } from './mat-tool-bar/mat-tool-bar.component';
+import {MatToolbar} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,9 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
     MatExpansionPanelComponent,
     MatGridComponent,
     MatListComponent,
-    MatMenuComponent
+    MatMenuComponent,
+    MatSpinnerComponent,
+    MatToolBarComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +97,12 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
     MatListItem,
     MatMenuTrigger,
     MatMenu,
-    MatMenuItem
+    MatMenuItem,
+    MatProgressSpinner,
+    MatRadioGroup,
+    MatRadioButton,
+    MatProgressSpinnerModule,
+    MatToolbar
   ],
   providers: [
     provideAnimationsAsync()

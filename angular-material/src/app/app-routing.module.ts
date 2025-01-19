@@ -10,6 +10,8 @@ import {MatExpansionPanelComponent} from './mat-expansion-panel/mat-expansion-pa
 import {MatGridComponent} from './mat-grid/mat-grid.component';
 import {MatListComponent} from './mat-list/mat-list.component';
 import {MatMenuComponent} from './mat-menu/mat-menu.component';
+import {MatSpinnerComponent} from './mat-spinner/mat-spinner.component';
+import {MatToolBarComponent} from './mat-tool-bar/mat-tool-bar.component';
 
 const routes: Routes = [
   {path: 'mat-auto-complete', component: MatAutoCompleteDemoComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path: 'mat-grid', component: MatGridComponent},
   {path: 'mat-list', component: MatListComponent},
   {path: 'mat-menu', component: MatMenuComponent},
+  {path: 'mat-spinner', component: MatSpinnerComponent},
+  {path: 'mat-toolbar', component: MatToolBarComponent},
 ];
 
 @NgModule({
