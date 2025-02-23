@@ -1,0 +1,54 @@
+<!--Note: I've added some useless id tags. Just to be able to see better what is what while using the browser inspection.-->
+<table mat-table
+       [dataSource]="dataSource" multiTemplateDataRows
+       class="mat-elevation-z8">
+  @for (column of columnsToDisplay; track column) { <!--@for is a new version of ngFor. "track" is some optimization, which helps with re-rendering.-->
+    <ng-container matColumnDef="{{column}}"> <!--Dynamically creates an Angular Material column.-->
+      <th id="myHeaderId" mat-header-cell *matHeaderCellDef> {{column}} </th> <!--Defining the table header (a.k.a. first row in a table, which defines the column). | mat-header-cell: A directive from Angular Material that styles the cell to fit inside a Material table header. | *matHeaderCellDef: A structural directive used inside an <ng-container> to define the header template for a column.-->
+      <td id="myTableDefinitionId" mat-cell *matCellDef="let element"> {{element[column]}} </td> <!--Going through the datasource. This generates a table definition (value for a column, NOT row). So if there are 10 records, then 10 table definitions for the column "name" will be generated. Then when the next column "position" comes, 10 td for it will be generated. And so on... Generation is done column with values by column with values. Not all columns, and then row by row.-->
+    </ng-container>
+  }
+
+  <!--After defining the traditional columns and values, here a definition of a new column will be added - the expand column. Which does NOT show information, but does an action which... shows more information-->
+  <ng-container matColumnDef="expand">
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+    <td mat-cell *matCellDef="let element"> <!--Again, element is from the provided "dataSource". As previously explained, we define a column and then all of its values. Here we do it for the expanded column.-->
+      <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()"> <!--Like a switch mechanism. When clicked, this becomes element if it is not element or goes null if it is element. TLDR - switches between element and null.-->
+        @if (expandedElement === element) {
+          <mat-icon>keyboard_arrow_up</mat-icon>
+        } @else {
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        }
+      </button>
+    </td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <!-- If you open the browser inspection while expanding/retracting you will see that when expanded, it is like a new table row is added. But this table row is not like the others - having as many values as there are column. No, there is just one value, formated in a weird way, which takes up space as much as there are defined columns in the table.-->
+  <ng-container matColumnDef="expandedDetail">
+    <td id="myExpandedTableDefinitionId" mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length"> <!--Define how many columns this will take-->
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-diagram"> <!--This is the big Square on the left of the description. And below are the thingies, which are visualized in the square.-->
+          <div class="example-element-position"> {{element.position}} </div>
+          <div class="example-element-symbol"> {{element.symbol}} </div>
+          <div class="example-element-name"> {{element.name}} </div>
+          <div class="example-element-weight"> {{element.weight}} </div>
+        </div>
+        <div class="example-element-description"> <!--And this ofcourse is the description on the right of the big square thingy.-->
+          {{element.description}}
+          <span class="example-element-description-attribution"> -- Wikipedia </span>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <!--Honestly, I don't know what's going on here below. My guess, above code does all the work, below code wraps around it and visualizes in I think. -->
+  <tr id="thisIsTheHeadRow" mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+  <tr id="thisIsTheNormalRow" mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+  </tr>
+  <tr id="thisIsTheExpandedRow" mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>

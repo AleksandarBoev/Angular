@@ -12,6 +12,9 @@ import {MatListComponent} from './mat-list/mat-list.component';
 import {MatMenuComponent} from './mat-menu/mat-menu.component';
 import {MatSpinnerComponent} from './mat-spinner/mat-spinner.component';
 import {MatToolBarComponent} from './mat-tool-bar/mat-tool-bar.component';
+import {
+  MatDynamicTableWithExpandInfoComponent
+} from './mat-dynamic-table-with-expand-info/mat-dynamic-table-with-expand-info.component';
 
 const routes: Routes = [
   {path: 'mat-auto-complete', component: MatAutoCompleteDemoComponent},
@@ -25,6 +28,7 @@ const routes: Routes = [
   {path: 'mat-menu', component: MatMenuComponent},
   {path: 'mat-spinner', component: MatSpinnerComponent},
   {path: 'mat-toolbar', component: MatToolBarComponent},
+  {path: 'mat-dynamic-table-with-expand-info', component: MatDynamicTableWithExpandInfoComponent},
 ];
 
 @NgModule({

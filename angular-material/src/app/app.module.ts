@@ -14,7 +14,7 @@ import { MatButtonToggleComponent } from './mat-button-toggle/mat-button-toggle.
 import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
 import { MatCardComponent } from './mat-card/mat-card.component';
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardModule} from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
+import {MatButton, MatButtonModule} from '@angular/material/button';
 import { MatChipsComponent } from './mat-chips/mat-chips.component';
 import {MatChipGrid, MatChipInput, MatChipRow, MatChipsModule} from "@angular/material/chips";
 import {MatIcon, MatIconModule} from '@angular/material/icon';
@@ -39,6 +39,8 @@ import {MatProgressSpinner, MatProgressSpinnerModule} from '@angular/material/pr
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import { MatToolBarComponent } from './mat-tool-bar/mat-tool-bar.component';
 import {MatToolbar} from '@angular/material/toolbar';
+import { MatDynamicTableWithExpandInfoComponent } from './mat-dynamic-table-with-expand-info/mat-dynamic-table-with-expand-info.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import {MatToolbar} from '@angular/material/toolbar';
     MatListComponent,
     MatMenuComponent,
     MatSpinnerComponent,
-    MatToolBarComponent
+    MatToolBarComponent,
+    MatDynamicTableWithExpandInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,8 @@ import {MatToolbar} from '@angular/material/toolbar';
     MatAutocomplete,
     MatCardModule,
     MatIconModule,
+    MatTableModule,
+    MatButtonModule,
     MatOption,
     MatFormFieldModule,
     MatChipsModule,
